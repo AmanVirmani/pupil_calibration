@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="bias_file" default="$(find samsung_ros_driver)/launch/config/low.txt"/>
+  <node pkg="samsung_ros_driver" type="samsung_ros_publisher" name="samsung_ros_publisher" respawn="false" output="screen" required="true">
+    <param name="camera_name" value="camera" />
+
+    <!-- Path to the file with the camera settings -->
+    <param name="bias_file" value="$(arg bias_file)" />
+  </node>
+
+</launch>
